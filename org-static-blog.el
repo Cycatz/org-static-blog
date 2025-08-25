@@ -42,6 +42,7 @@
 (require 'cl-extra)
 (require 'org)
 (require 'ox-html)
+(require 'ox-tufte)
 
 (defgroup org-static-blog nil
   "Settings for a static blog generator using org-mode"
