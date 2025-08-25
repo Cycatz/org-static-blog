@@ -722,12 +722,24 @@ The index, archive, tags, and RSS feed are not updated."
           result)))))
 
 (org-export-define-derived-backend 'org-static-blog-post-bare 'tufte-html
+  :options-alist
+  '((:footnotes-section-p nil "footnotes-section-p"
+                          org-tufte-include-footnotes-at-bottom)
+    ;; Recommended overrides for `ox-html'
+    (:html-checkbox-type nil nil org-tufte-html-checkbox-type)
+    ;; Essential overrides: recommended not to alter.  Thus their KEYWORDS and
+    ;; OPTIONS are set to nil and disabled.
+    (:html-divs nil nil org-tufte-html-sections)
+    (:html-container nil nil "section")
+    (:html-doctype nil nil "html5")
+    (:html-html5-fancy nil nil t))
   :translate-alist '((footnote-reference . org-tufte-footnote-reference)
                      (link . org-tufte-maybe-margin-note-link)
                      (quote-block . org-tufte-quote-block)
                      (special-block . org-tufte-special-block)
                      (verse-block . org-tufte-verse-block)
-					 (template . (lambda (contents info) contents)))
+					 (template . (lambda (contents info) contents))))
+
 
 (defun org-static-blog-assemble-index ()
   "Assemble the blog index page.
