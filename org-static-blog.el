@@ -398,12 +398,12 @@ Only if og tags are enabled. It can be overridden with the
    "<div id=\"preamble\" class=\"status\">"
    org-static-blog-page-preamble
    "</div>\n"
-   "<div id=\"content\">\n"
+   "<article id=\"content\">\n"
    tContent
-   "</div>\n"
-   "<div id=\"postamble\" class=\"status\">"
+   "</article>\n"
+   "<footer id=\"postamble\" class=\"status\">"
    org-static-blog-page-postamble
-   "</div>\n"
+   "</footer>\n"
    "</body>\n"
    "</html>\n"))
 
