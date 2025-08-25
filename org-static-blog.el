@@ -722,7 +722,12 @@ The index, archive, tags, and RSS feed are not updated."
           result)))))
 
 (org-export-define-derived-backend 'org-static-blog-post-bare 'tufte-html
-  :translate-alist '((template . (lambda (contents info) contents))))
+  :translate-alist '((footnote-reference . org-tufte-footnote-reference)
+                     (link . org-tufte-maybe-margin-note-link)
+                     (quote-block . org-tufte-quote-block)
+                     (special-block . org-tufte-special-block)
+                     (verse-block . org-tufte-verse-block)
+					 (template . (lambda (contents info) contents)))
 
 (defun org-static-blog-assemble-index ()
   "Assemble the blog index page.
