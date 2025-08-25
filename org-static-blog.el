@@ -720,7 +720,7 @@ The index, archive, tags, and RSS feed are not updated."
           (switch-to-buffer current-buffer)
           result)))))
 
-(org-export-define-derived-backend 'org-static-blog-post-bare 'html
+(org-export-define-derived-backend 'org-static-blog-post-bare 'tufte-html
   :translate-alist '((template . (lambda (contents info) contents))))
 
 (defun org-static-blog-assemble-index ()
