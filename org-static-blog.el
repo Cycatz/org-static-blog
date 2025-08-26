@@ -627,13 +627,13 @@ Preamble and Postamble are excluded, too."
          (if exclude-title
              (progn (search-forward "<h1 class=\"post-title\">")
                     (search-forward "</h1>"))
-           (search-forward "<div id=\"content\">"))
+           (search-forward "<article id=\"content\">"))
          (point))
        (progn
          (goto-char (point-max))
          ;; Search backward for the post content (by org-static-blog-render-post-content).
          ;; See: org-static-blog-template
-         (search-backward "<div id=\"postamble\" class=\"status\">")
+         (search-backward "<footer id=\"postamble\" class=\"status\">")
          (search-backward "</div>")
          ;; If comments section exists, it is then one div backward.
          ;; See: org-static-blog-post-postamble
